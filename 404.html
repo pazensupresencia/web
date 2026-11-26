@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Página no encontrada · Paz en Su Presencia</title>
+<meta name="description" content="Página no encontrada.">
+<link rel="canonical" href="https://pazensupresencia.com/404.html">
+<meta name="theme-color" content="#07101F">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/estilo.css">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Paz en Su Presencia">
+<meta property="og:title" content="Página no encontrada · Paz en Su Presencia">
+<meta property="og:description" content="Página no encontrada.">
+<meta property="og:url" content="https://pazensupresencia.com/404.html">
+<meta property="og:image" content="https://pazensupresencia.com/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+</head>
+<body>
+<div class="aviso">🕯️ La Novena a la Virgen de Guadalupe empieza el jueves 3 de diciembre · <a href="/#novena">Recíbela gratis →</a></div>
+<header class="cab"><div class="w">
+ <a class="logo" href="/"><img src="/img/logo.png" alt="" width="46" height="46">Paz en Su Presencia</a>
+ <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menú</button>
+ <nav class="nav" id="nav" aria-label="Principal"><ul><li><a href="/rezar-hoy.html">Rezar hoy</a></li><li><a href="/#novena">Novena gratis</a></li><li><a href="/tienda.html">Tienda</a></li><li><a href="/#musica">Música</a></li><li><a href="/sobre-nosotros.html">Nosotros</a></li><li><a class="btn b-oro" href="/#circulo">Colabora</a></li></ul></nav>
+</div></header>
+<main id="contenido">
+<section class="pagina cielo"><div class="w estrecho centro"><h1>Esta página no existe</h1><p>Quizá te interese la oración de hoy o la novena gratis.</p><div class="botones" style="justify-content:center"><a class="btn b-osc" href="/">Ir al inicio</a><a class="btn b-lin-osc" href="/tienda.html">Ver la tienda</a></div></div></section>
+</main>
+<footer class="pie"><div class="w">
+ <div class="cols">
+  <div><a class="logo" href="/"><img src="/img/logo.png" alt="" width="46" height="46">Paz en Su Presencia</a>
+   <p style="margin-top:14px">Música cristiana original, oración y recursos católicos para rezar en familia. Hecho en España para todo el mundo hispano.</p></div>
+  <div><h3>Explora</h3><ul><li><a href="/#novena">Novena gratis</a></li><li><a href="/tienda.html">Tienda</a></li><li><a href="/rezar-hoy.html">La oración de hoy</a></li><li><a href="/#musica">Música</a></li><li><a href="/#circulo">Círculo de Paz</a></li><li><a href="/sobre-nosotros.html">Nosotros</a></li></ul></div>
+  <div><h3>Síguenos</h3><ul><li><a href="https://www.youtube.com/@PazEnSuPresenciaOficial?sub_confirmation=1" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://open.spotify.com/intl-es/artist/4fGFrnjkPyAhubtV4lOs6Q" target="_blank" rel="noopener">Spotify</a></li><li><a href="https://www.instagram.com/pazensupresenciaoficial/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/PazEnSuPresenciaOficial" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.tiktok.com/@pazensupresenciaoficial" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.pinterest.com/pazensupresencia/" target="_blank" rel="noopener">Pinterest</a></li><li><a href="mailto:hola@pazensupresencia.com">hola@pazensupresencia.com</a></li></ul></div>
+ </div>
+ <div class="legal"><span>© 2026 Paz en Su Presencia</span><span><a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="/uso-de-ia.html">Uso de IA</a></span></div>
+</div></footer>
+<div class="barra-movil"><a class="btn b-oro" href="/#novena">🎁 Novena gratis</a><a class="btn b-linea" href="/tienda.html">🛍️ Tienda</a></div>
+<script>
+(function(){
+ var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');
+ function cerrar(){n.classList.remove('abierto');b.setAttribute('aria-expanded','false');b.textContent='Menú';}
+ b.addEventListener('click',function(){var a=n.classList.toggle('abierto');b.setAttribute('aria-expanded',a);b.textContent=a?'Cerrar':'Menú';});
+ n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cerrar);});
+ document.querySelectorAll('.onda').forEach(function(e){var n=+e.dataset.n||60,h=+e.dataset.h||30,s='';for(var i=0;i<n;i++){var v=Math.abs(Math.sin(i*1.7)*Math.cos(i*.45));s+='<i style="height:'+Math.round(4+v*h)+'px"></i>';}e.innerHTML=s;});
+ document.querySelectorAll('form.ml').forEach(function(f){
+  f.addEventListener('submit',function(e){
+   e.preventDefault();
+   if(f.querySelector('[name=web]').value)return;
+   var em=f.querySelector('[type=email]'),ck=f.querySelector('[type=checkbox]');
+   if(!em.value||em.value.indexOf('@')<1){em.focus();return;}
+   if(!ck.checked){ck.focus();ck.parentNode.style.color='#9B2C45';return;}
+   var d=new FormData(f);d.delete('web');d.append('ml-submit','1');d.append('anticsrf','true');
+   var btn=f.querySelector('button');btn.disabled=true;btn.textContent='Enviando…';
+   fetch('https://assets.mailerlite.com/jsonp/2819117/forms/205228704711837491/subscribe',{method:'POST',body:d,mode:'no-cors'}).then(function(){f.parentNode.classList.add('enviado');})
+   .catch(function(){btn.disabled=false;btn.textContent='Inténtalo de nuevo';});
+  });
+ });
+})();
+</script>
+<script data-goatcounter="https://pazensupresencia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
