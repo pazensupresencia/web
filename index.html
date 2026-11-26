@@ -115,6 +115,22 @@ section{padding:90px 0;position:relative}
 .go{font-size:13px;font-weight:700;color:#fff;background:var(--navy);padding:7px 14px;border-radius:999px}
 .tag{position:absolute;z-index:2;margin:12px;background:linear-gradient(135deg,#c2456b,#e0793f);color:#fff;font-size:11px;font-weight:700;letter-spacing:.12em;padding:6px 11px;border-radius:999px;box-shadow:0 6px 16px rgba(194,69,107,.4)}
 .center{text-align:center;margin-top:36px}
+/* COLABORA */
+.give{color:#fff;text-align:center;background:radial-gradient(circle at 20% 20%,rgba(243,210,122,.35),transparent 40%),radial-gradient(circle at 85% 80%,rgba(194,69,107,.35),transparent 45%),linear-gradient(135deg,#14203d,#2a2f6b 55%,#5a2a5e)}
+.give .title p{color:#e3e6f5}
+.give h2 .heart{display:inline-block;animation:beat 1.8s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.15)}}
+.tiers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:1000px;margin:0 auto}
+.tier{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:26px 18px;text-decoration:none;color:#fff;display:flex;flex-direction:column;align-items:center;gap:6px;transition:transform .2s,background .2s;backdrop-filter:blur(6px)}
+.tier:hover{transform:translateY(-6px);background:rgba(255,255,255,.14)}
+.tier.star{background:linear-gradient(160deg,rgba(243,210,122,.3),rgba(201,154,62,.15));border-color:#f3d27a}
+.tier .amt{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:#ffe39a;line-height:1}
+.tier .per{font-size:13px;opacity:.85}
+.tier .lbl{font-weight:700;margin-top:6px}
+.tier .cta2{margin-top:12px;background:#fff;color:#1F2A44;font-weight:700;font-size:14px;padding:9px 18px;border-radius:999px}
+.give .note{max-width:680px;margin:26px auto 0;font-size:13px;opacity:.8}
+.give .pay{margin-top:10px;font-size:13px;opacity:.85}
+@media(max-width:860px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}}
 /* VERSE */
 .verse{color:#fff;text-align:center;background:linear-gradient(120deg,#2b1f5c 0%,#7a2e6b 40%,#e0793f 80%,#f3c46a 100%);overflow:hidden}
 .verse::before{content:"🕊";position:absolute;font-size:220px;opacity:.08;right:4%;top:-30px}
@@ -155,6 +171,7 @@ footer .logo{display:block;margin-bottom:10px}
   <li><a href="#novena">Novena gratis</a></li>
   <li><a href="#musica">Música</a></li>
   <li><a href="#tienda">Tienda</a></li>
+  <li><a href="#colabora">Colabora</a></li>
   <li><a href="#redes">Síguenos</a></li>
  </ul>
 </div></nav>
@@ -229,6 +246,24 @@ footer .logo{display:block;margin-bottom:10px}
    <a class="card" href="https://payhip.com/b/aQ9t5" target="_blank" rel="noopener"><div class="imgbox"><img loading="lazy" src="https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1k894ahvd8dm1smc1ommqdb1cs21o.png" alt="Mandalas de Paz"></div><div class="b"><span class="cat c3">Para colorear</span><h3>Mandalas de Paz</h3><p>30 mandalas cristianos con salmos, para momentos de calma.</p><div class="row"><span class="price">$4.99</span><span class="go">Ver →</span></div></div></a>
   </div>
   <div class="center"><a class="btn btn-navy" href="https://payhip.com/PazenSuPresencia" target="_blank" rel="noopener">Ver la tienda completa →</a></div>
+ </div>
+</section>
+
+<section class="give" id="colabora">
+ <div class="wrap">
+  <div class="title">
+   <svg class="orn" viewBox="0 0 140 16" style="color:#f3d27a"><path d="M0 8h56M84 8h56" stroke="currentColor"/><path d="M70 1l7 7-7 7-7-7z" fill="currentColor"/><circle cx="50" cy="8" r="2" fill="currentColor"/><circle cx="90" cy="8" r="2" fill="currentColor"/></svg>
+   <h2><span class="heart">💛</span> Colabora con Paz en Su Presencia</h2>
+   <p>Detrás de cada canción y cada oración hay personas que rezan, escriben y deciden, y herramientas de inteligencia artificial que nos ayudan a llegar a miles de hogares. Mantener la música, las novenas y los recursos gratuitos tiene un coste. Si este proyecto te acompaña, puedes ayudarnos a que siga llegando a más familias.</p>
+  </div>
+  <div class="tiers">
+   <a class="tier" href="https://buy.stripe.com/8x2cN42Ae2DN09e5IDdjO00" target="_blank" rel="noopener"><span class="amt">Libre</span><span class="per">una sola vez</span><span class="lbl">Aportación única</span><span class="cta2">Aportar</span></a>
+   <a class="tier" href="https://buy.stripe.com/4gMaEWfn03HR5ty7QLdjO01" target="_blank" rel="noopener"><span class="amt">$3</span><span class="per">al mes</span><span class="lbl">Apoyo mensual</span><span class="cta2">Unirme</span></a>
+   <a class="tier star" href="https://buy.stripe.com/9B6fZg1wa3HRcW01sndjO02" target="_blank" rel="noopener"><span class="amt">$5</span><span class="per">al mes</span><span class="lbl">Apoyo mensual ⭐</span><span class="cta2">Unirme</span></a>
+   <a class="tier" href="https://buy.stripe.com/9B65kC4Imdir09eb2XdjO03" target="_blank" rel="noopener"><span class="amt">$10</span><span class="per">al mes</span><span class="lbl">Apoyo mensual</span><span class="cta2">Unirme</span></a>
+  </div>
+  <p class="pay">💳 Tarjeta · Apple Pay · Google Pay — pago seguro con Stripe. Puedes cancelar tu apoyo mensual cuando quieras: <a href="https://billing.stripe.com/p/login/8x2cN42Ae2DN09e5IDdjO00" target="_blank" rel="noopener" style="color:#ffe39a;font-weight:700">Gestionar o cancelar mi apoyo</a>.</p>
+  <p class="note">Aportación voluntaria a un proyecto creativo independiente. No es un donativo deducible ni está vinculada a ninguna oración o intención: rezamos por todos por igual.</p>
  </div>
 </section>
 
