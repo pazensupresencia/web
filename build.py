@@ -113,7 +113,7 @@ def pie():
  }});
 }})();
 </script>
-<script data-goatcounter="https://pazensupresencia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'''
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "a708560c8d5b40fc872ec908e790fb5d"}}'></script><!-- End Cloudflare Web Analytics -->'''
 
 def pagina(nombre, titulo, descripcion, cuerpo, ruta=None, extra=""):
     ruta = ruta if ruta is not None else ("/" if nombre == "index.html" else "/" + nombre)

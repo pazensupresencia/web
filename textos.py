@@ -64,7 +64,7 @@ PRIV = f'''<section class="pagina cielo"><div class="w estrecho">
  <h2>Cuánto tiempo los guardamos</h2>
  <p>Hasta que te des de baja o nos pidas que los borremos. Los datos de compras, el tiempo que exijan las obligaciones legales y fiscales.</p>
  <h2>Con quién se comparten</h2>
- <p>Con los proveedores que nos ayudan a prestar el servicio, con contratos que garantizan la protección de tus datos: MailerLite (envío de correos, UAB MailerLite, Lituania, UE), Payhip (venta de productos digitales), Stripe (pagos), Netlify (alojamiento web) y GoatCounter (estadísticas de visitas sin cookies ni datos personales). Algunos pueden tratar datos fuera del Espacio Económico Europeo con las garantías previstas en el RGPD (cláusulas contractuales tipo o marco de privacidad UE-EE. UU.). No vendemos ni cedemos tus datos a nadie.</p>
+ <p>Con los proveedores que nos ayudan a prestar el servicio, con contratos que garantizan la protección de tus datos: MailerLite (envío de correos, UAB MailerLite, Lituania, UE), Payhip (venta de productos digitales), Stripe (pagos), Netlify (alojamiento web) y Cloudflare Web Analytics (estadísticas de visitas sin cookies ni datos personales, Cloudflare Inc.). Algunos pueden tratar datos fuera del Espacio Económico Europeo con las garantías previstas en el RGPD (cláusulas contractuales tipo o marco de privacidad UE-EE. UU.). No vendemos ni cedemos tus datos a nadie.</p>
  <h2>Tus derechos</h2>
  <p>Puedes pedir el acceso, la rectificación, la supresión, la oposición, la limitación o la portabilidad de tus datos escribiendo a <a href="mailto:hola@pazensupresencia.com">hola@pazensupresencia.com</a>. Si crees que no hemos atendido bien tu petición, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
  <p class="pequeno">Última actualización: noviembre de 2026.</p>
@@ -75,7 +75,7 @@ COOK = '''<section class="pagina cielo"><div class="w estrecho">
  <p>Esta web <strong>no usa cookies propias ni de terceros</strong> con fines de análisis o publicidad, por eso no te mostramos ningún aviso para aceptarlas.</p>
  <ul>
   <li>Las tipografías están alojadas en nuestro propio servidor.</li>
-  <li>Las estadísticas de visitas se hacen con GoatCounter, que no usa cookies ni guarda datos personales.</li>
+  <li>Las estadísticas de visitas se hacen con Cloudflare Web Analytics, que no usa cookies ni guarda datos personales.</li>
   <li>Los vídeos y la música no se reproducen dentro de la web: al pulsarlos se abre YouTube o Spotify, que tienen sus propias políticas.</li>
  </ul>
  <p>Si sales a otras webs desde aquí (Payhip, Stripe, YouTube, Spotify o redes sociales), esas webs pueden usar sus propias cookies, según sus políticas.</p>
