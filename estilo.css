@@ -5,7 +5,7 @@
 @font-face{font-family:"Fraunces";src:url(/fonts/fraunces-latin-400-italic.woff2) format("woff2");font-style:italic;font-weight:400;font-display:swap}
 
 :root{--n0:#07101F;--n1:#0E1A33;--n2:#16264A;--n3:#1B2D57;--oro:#E9B54A;--oro2:#FFDB8E;--orot:#9A6A0E;
---cielo:#EAF3FF;--cielo2:#FFF4DE;--tx:#14182B;--sec:#545B72;--secn:#AEB8D2;--gran:#9B2C45;--wa:#1FA463;--r:22px}
+--cielo:#EAF3FF;--cielo2:#FFF4DE;--tx:#14182B;--sec:#545B72;--secn:#AEB8D2;--gran:#9B2C45;--wa:#0F7A43;--r:22px}
 *{box-sizing:border-box;min-width:0}
 html{scroll-behavior:smooth;scroll-padding-top:20px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -14,7 +14,7 @@ img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--oro);outline-offset:3px;border-radius:6px}
 h1,h2,h3{font-family:"Outfit",sans-serif;font-weight:700;margin:0 0 .35em;line-height:1.06;letter-spacing:-.02em}
-h2{font-size:clamp(2rem,4.6vw,3.2rem)}
+h2,h1.h2{font-size:clamp(2rem,4.6vw,3.2rem)}
 h3{font-size:1.3rem}
 p{margin:0 0 1em}
 .w{max-width:1180px;margin:0 auto;padding:0 22px}
@@ -71,7 +71,7 @@ p{margin:0 0 1em}
 .hero .jesus img{width:100%;height:100%;object-fit:cover;object-position:left center;-webkit-mask:linear-gradient(90deg,transparent 0%,#000 30%);mask:linear-gradient(90deg,transparent 0%,#000 30%)}
 .hero .w{position:relative;z-index:2}
 .hcont{padding:84px 0 80px;max-width:620px}
-.hero h1{font-size:clamp(2.9rem,7.6vw,5.8rem)}
+.hero .marca-hero{font-family:"Outfit",sans-serif;font-weight:700;line-height:1.06;letter-spacing:-.02em;margin:0 0 .35em;font-size:clamp(2.9rem,7.6vw,5.8rem)}
 .hero .sub{font:italic 400 clamp(1.25rem,2.6vw,1.55rem)/1.3 "Fraunces",serif;color:var(--oro2);margin:-2px 0 18px}
 .hero p{color:#C9D2E8;font-size:1.12rem;max-width:540px}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 28px}
@@ -225,3 +225,12 @@ p{margin:0 0 1em}
 .pagina h2{font-size:1.45rem;margin-top:1.6em}
 .pagina ul{padding-left:1.2em}
 .pagina a{color:var(--n3)}
+
+/* Ajustes auditoría 27 nov: tamaños mínimos y áreas táctiles */
+.micro,.garantia,.aviso,.precio,.casilla,.casilla span{font-size:1rem}
+.etq,small,.gen small{font-size:.875rem}
+.chips a{min-height:44px;display:inline-flex;align-items:center}
+.pie li a{display:inline-block;padding:6px 0}
+.legal a{display:inline-block;padding:8px 0}
+/* Barra fija móvil por encima del distintivo de Netlify (plan gratuito) */
+@media (max-width:920px){.barra-movil{bottom:72px;left:10px;right:10px;border:1px solid #ffffff26;border-radius:999px;padding:8px}.pie{padding-bottom:170px}}

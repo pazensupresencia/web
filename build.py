@@ -71,7 +71,7 @@ def cabecera():
     items = "".join(f'<li><a href="{u}">{t}</a></li>' for u, t in MENU)
     return f'''<div class="aviso">🕯️ La Novena a la Virgen de Guadalupe empieza el jueves 3 de diciembre · <a href="/#novena">Recíbela gratis →</a></div>
 <header class="cab"><div class="w">
- <a class="logo" href="/"><img src="/img/logo.png" alt="" width="46" height="46">Paz en Su Presencia</a>
+ <a class="logo" href="/"><img src="/img/logo-96.webp" alt="" width="46" height="46">Paz en Su Presencia</a>
  <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menú</button>
  <nav class="nav" id="nav" aria-label="Principal"><ul>{items}<li><a class="btn b-oro" href="/#circulo">Colabora</a></li></ul></nav>
 </div></header>'''
@@ -79,7 +79,7 @@ def cabecera():
 def pie():
     return f'''<footer class="pie"><div class="w">
  <div class="cols">
-  <div><a class="logo" href="/"><img src="/img/logo.png" alt="" width="46" height="46">Paz en Su Presencia</a>
+  <div><a class="logo" href="/"><img src="/img/logo-96.webp" alt="" width="46" height="46">Paz en Su Presencia</a>
    <p style="margin-top:14px">Música cristiana original, oración y recursos católicos para rezar en familia. Hecho en España para todo el mundo hispano.</p></div>
   <div><h3>Explora</h3><ul><li><a href="/#novena">Novena gratis</a></li><li><a href="/tienda.html">Tienda</a></li><li><a href="/rezar-hoy.html">La oración de hoy</a></li><li><a href="/#musica">Música</a></li><li><a href="/#circulo">Círculo de Paz</a></li><li><a href="/sobre-nosotros.html">Nosotros</a></li></ul></div>
   <div><h3>Síguenos</h3><ul><li><a href="{YT_SUB}" {EXT}>YouTube</a></li><li><a href="{SPOTIFY}" {EXT}>Spotify</a></li><li><a href="{REDES['ig'][0]}" {EXT}>Instagram</a></li><li><a href="{REDES['fb'][0]}" {EXT}>Facebook</a></li><li><a href="{REDES['tt'][0]}" {EXT}>TikTok</a></li><li><a href="{REDES['pi'][0]}" {EXT}>Pinterest</a></li><li><a href="mailto:hola@pazensupresencia.com">hola@pazensupresencia.com</a></li></ul></div>
@@ -103,8 +103,12 @@ def pie():
    if(!ck.checked){{ck.focus();ck.parentNode.style.color='#9B2C45';return;}}
    var d=new FormData(f);d.delete('web');d.append('ml-submit','1');d.append('anticsrf','true');
    var btn=f.querySelector('button');btn.disabled=true;btn.textContent='Enviando…';
-   fetch('{ML_URL}',{{method:'POST',body:d,mode:'no-cors'}}).then(function(){{f.parentNode.classList.add('enviado');}})
-   .catch(function(){{btn.disabled=false;btn.textContent='Inténtalo de nuevo';}});
+   function ok(){{f.parentNode.classList.add('enviado');}}
+   function mal(t){{btn.disabled=false;btn.textContent=t;em.focus();}}
+   fetch('{ML_URL}',{{method:'POST',body:d}})
+   .then(function(r){{return r.json();}})
+   .then(function(j){{if(j&&j.success){{ok();}}else{{mal('Revisa tu correo e inténtalo de nuevo');}}}})
+   .catch(function(){{fetch('{ML_URL}',{{method:'POST',body:d,mode:'no-cors'}}).then(ok).catch(function(){{mal('Inténtalo de nuevo');}});}});
   }});
  }});
 }})();
@@ -198,7 +202,7 @@ MUSICA = f'''<section class="sec noche tech" id="musica"><div class="w">
   <div class="botones"><a class="btn b-oro" href="{SPOTIFY}" {EXT}>Seguir en Spotify</a><a class="btn b-linea" href="{YT_SUB}" {EXT}>Suscribirse en YouTube</a></div></div>
  <div class="musica">
   <a class="reproductor" href="{SPOTIFY}" {EXT}>
-   <div class="portada-rep"><img src="/img/logo.png" alt="" width="320" height="320" loading="lazy"></div>
+   <div class="portada-rep"><img src="/img/logo-320.webp" alt="" width="320" height="320" loading="lazy"></div>
    <h3>Paz en Su Presencia</h3><div class="art">Música cristiana original · Spotify</div>
    <div class="barra"><i></i></div>
    <div class="controles"><span class="play"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span>Escuchar en Spotify</span></div>
@@ -215,7 +219,7 @@ CIRCULO = f'''<section class="sec cielo" id="circulo"><div class="w circulo">
  <div>
   <span class="eyebrow">Círculo de Paz</span>
   <h2>Ayúdanos a llevar oración a muchas casas</h2>
-  <p class="lead">Paz en Su Presencia es un proyecto pequeño e independiente. Cada canción, cada vídeo y cada oración tienen un coste. Si este canal te acompaña, puedes sostenerlo con una aportación voluntaria.</p>
+  <p class="lead">Paz en Su Presencia es un proyecto pequeño e independiente. Grabar cada canción y preparar cada vídeo tiene un coste. Si este canal te acompaña, puedes sostenerlo con una aportación voluntaria.</p>
   <div class="niveles">
    <a class="nivel" href="{STRIPE['3']}" {EXT}>US$ 3/mes<small>Amigo</small></a>
    <a class="nivel" href="{STRIPE['5']}" {EXT}>US$ 5/mes<small>Compañero</small></a>
@@ -242,7 +246,7 @@ INICIO = f'''<section class="hero">
  <div class="jesus"><img src="/img/jesus_hero.jpg" alt="Jesús con una paloma bajo la luz del cielo" width="600" height="630" fetchpriority="high"></div>
  <div class="w"><div class="hcont">
   <span class="eyebrow">Música · Oración · Familia</span>
-  <h1>Paz en Su Presencia</h1>
+  <p class="marca-hero">Paz en Su Presencia</p>
   <div class="sub">Fortalece tu fe a través de la música</div>
   <p>Música cristiana original, oraciones para cada día y recursos católicos para rezar en casa.</p>
   <div class="chips">{"".join(f'<a href="{YT}/search?query={q.replace(" ","+")}" {EXT}>{n}</a>' for n,q in [("Rancheras","ranchera"),("Flamenco","flamenco"),("Tango","tango"),("Jazz","jazz"),("Rumba","rumba"),("Villancicos","villancicos")])}</div>
@@ -255,9 +259,10 @@ INICIO = f'''<section class="hero">
 <section class="sec cielo" id="novena"><div class="w nov">
  <div>
   <span class="eyebrow">Adviento 2026 · Gratis</span>
-  <h2>Reza la Novena a la Virgen de Guadalupe en familia</h2>
+  <h1 class="h2">Reza la Novena a la Virgen de Guadalupe en familia</h1>
   <p class="lead">Del 3 al 11 de diciembre, cada mañana en tu correo: la oración del día, una lectura breve y un villancico para escuchar juntos. El 12, una oración especial para el día de la Virgen.</p>
-  <div class="ventajas"><div><b>✉</b>Un correo cada mañana, 9 días</div><div><b>✦</b>Oración y lectura en 5 minutos</div><div><b>♪</b>Música para rezar juntos</div></div>
+  <p class="micro" style="text-align:left">¿Te apuntas con la novena ya empezada? Recibirás los días que quedan y en el correo de bienvenida tienes la novena completa en PDF para ponerte al día.</p>
+  <div class="ventajas"><div><b>✉</b>Un correo cada mañana del 3 al 11, y uno especial el 12</div><div><b>✦</b>Oración y lectura en 5 minutos</div><div><b>♪</b>Música para rezar juntos</div></div>
  </div>
  {formulario("form-novena", titulo="Recíbela gratis en tu correo")}
 </div></section>
@@ -292,12 +297,22 @@ pagina("index.html", "Paz en Su Presencia · Música cristiana, oración y recur
 grupos = [("Navidad y Adviento", ["cancionero", "adviento", "posadas", "reyes"]),
           ("Para rezar todo el año", ["rosario", "calendario"]),
           ("Para colorear en familia", ["packcol", "navidad", "arca", "mandalas"])]
+AMAZON = f'''<div class="pack" style="margin-top:56px;background:linear-gradient(135deg,#1B2D57,#13234A);border-color:#ffffff26">
+ <div style="font-size:4rem;text-align:center">📦</div>
+ <div><span class="ahorro" style="background:#232F3E">También impreso</span>
+  <h3 style="font-size:clamp(1.4rem,3vw,1.9rem)">«La Navidad de Jesús» en tapa blanda, en Amazon</h3>
+  <p style="color:#C9D2E8">El libro para colorear, impreso y enviado a casa por Amazon. Ideal para regalar estas Navidades.</p>
+  <div class="botones"><a class="btn b-oro" href="https://www.amazon.com/dp/B0HT1FD2N1" {EXT}>Amazon EE. UU.</a><a class="btn b-linea" href="https://www.amazon.es/dp/B0HT1FD2N1" {EXT}>Amazon España</a><a class="btn b-linea" href="https://www.amazon.co.uk/dp/B0HT1FD2N1" {EXT}>Amazon UK</a></div>
+ </div>
+</div>'''
+
 TIENDA_HTML = f'''<section class="sec noche tech"><div class="w">
  <span class="eyebrow">Tienda</span>
  <h1 style="font-size:clamp(2.4rem,5.5vw,3.8rem)">Recursos católicos para rezar en familia</h1>
  <p class="lead">PDF ilustrados para descargar al momento e imprimir en casa las veces que quieras. Precios en dólares estadounidenses (US$).</p>
  {PACK}
  {"".join(f'<div class="grupo"><h3>{g}</h3><div class="prods">{"".join(tarjeta(k) for k in ks)}</div></div>' for g, ks in grupos)}
+ {AMAZON}
  {CONFIANZA}
  <p class="centro" style="margin-top:30px;color:var(--secn);font-size:.92rem">Ilustraciones creadas con ayuda de inteligencia artificial y revisadas a mano. ¿Dudas? <a href="mailto:hola@pazensupresencia.com" style="color:var(--oro2)">hola@pazensupresencia.com</a> · <a href="{TIENDA}" {EXT} style="color:var(--oro2)">Tienda en Payhip</a></p>
 </div></section>

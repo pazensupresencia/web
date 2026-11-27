@@ -25,7 +25,7 @@
 <body>
 <div class="aviso">🕯️ La Novena a la Virgen de Guadalupe empieza el jueves 3 de diciembre · <a href="/#novena">Recíbela gratis →</a></div>
 <header class="cab"><div class="w">
- <a class="logo" href="/"><img src="/img/logo.png" alt="" width="46" height="46">Paz en Su Presencia</a>
+ <a class="logo" href="/"><img src="/img/logo-96.webp" alt="" width="46" height="46">Paz en Su Presencia</a>
  <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menú</button>
  <nav class="nav" id="nav" aria-label="Principal"><ul><li><a href="/rezar-hoy.html">Rezar hoy</a></li><li><a href="/#novena">Novena gratis</a></li><li><a href="/tienda.html">Tienda</a></li><li><a href="/#musica">Música</a></li><li><a href="/sobre-nosotros.html">Nosotros</a></li><li><a class="btn b-oro" href="/#circulo">Colabora</a></li></ul></nav>
 </div></header>
@@ -71,7 +71,7 @@ Amén.</p>
 </main>
 <footer class="pie"><div class="w">
  <div class="cols">
-  <div><a class="logo" href="/"><img src="/img/logo.png" alt="" width="46" height="46">Paz en Su Presencia</a>
+  <div><a class="logo" href="/"><img src="/img/logo-96.webp" alt="" width="46" height="46">Paz en Su Presencia</a>
    <p style="margin-top:14px">Música cristiana original, oración y recursos católicos para rezar en familia. Hecho en España para todo el mundo hispano.</p></div>
   <div><h3>Explora</h3><ul><li><a href="/#novena">Novena gratis</a></li><li><a href="/tienda.html">Tienda</a></li><li><a href="/rezar-hoy.html">La oración de hoy</a></li><li><a href="/#musica">Música</a></li><li><a href="/#circulo">Círculo de Paz</a></li><li><a href="/sobre-nosotros.html">Nosotros</a></li></ul></div>
   <div><h3>Síguenos</h3><ul><li><a href="https://www.youtube.com/@PazEnSuPresenciaOficial?sub_confirmation=1" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://open.spotify.com/intl-es/artist/4fGFrnjkPyAhubtV4lOs6Q" target="_blank" rel="noopener">Spotify</a></li><li><a href="https://www.instagram.com/pazensupresenciaoficial/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/PazEnSuPresenciaOficial" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.tiktok.com/@pazensupresenciaoficial" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.pinterest.com/pazensupresencia/" target="_blank" rel="noopener">Pinterest</a></li><li><a href="mailto:hola@pazensupresencia.com">hola@pazensupresencia.com</a></li></ul></div>
@@ -95,8 +95,12 @@ Amén.</p>
    if(!ck.checked){ck.focus();ck.parentNode.style.color='#9B2C45';return;}
    var d=new FormData(f);d.delete('web');d.append('ml-submit','1');d.append('anticsrf','true');
    var btn=f.querySelector('button');btn.disabled=true;btn.textContent='Enviando…';
-   fetch('https://assets.mailerlite.com/jsonp/2819117/forms/205228704711837491/subscribe',{method:'POST',body:d,mode:'no-cors'}).then(function(){f.parentNode.classList.add('enviado');})
-   .catch(function(){btn.disabled=false;btn.textContent='Inténtalo de nuevo';});
+   function ok(){f.parentNode.classList.add('enviado');}
+   function mal(t){btn.disabled=false;btn.textContent=t;em.focus();}
+   fetch('https://assets.mailerlite.com/jsonp/2819117/forms/205228704711837491/subscribe',{method:'POST',body:d})
+   .then(function(r){return r.json();})
+   .then(function(j){if(j&&j.success){ok();}else{mal('Revisa tu correo e inténtalo de nuevo');}})
+   .catch(function(){fetch('https://assets.mailerlite.com/jsonp/2819117/forms/205228704711837491/subscribe',{method:'POST',body:d,mode:'no-cors'}).then(ok).catch(function(){mal('Inténtalo de nuevo');});});
   });
  });
 })();
