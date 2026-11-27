@@ -341,6 +341,6 @@ pagina("404.html", "Página no encontrada · Paz en Su Presencia", "Página no e
 paginas = ["", "tienda.html", "rezar-hoy.html", "sobre-nosotros.html", "aviso-legal.html", "privacidad.html", "cookies.html", "uso-de-ia.html"]
 open("sitemap.xml", "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     "".join(f"  <url><loc>{DOM}/{p}</loc><lastmod>2026-11-27</lastmod></url>\n" for p in paginas) + "</urlset>\n")
-open("robots.txt", "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {DOM}/sitemap.xml\n")
+open("robots.txt", "w").write(f"User-agent: *\nAllow: /\nDisallow: /regalo-familia-g7k2/\n\nSitemap: {DOM}/sitemap.xml\n")
 open("_redirects", "w").write("/novena  /#novena  302\n/colabora  /#circulo  302\n/circulo-de-paz  /#circulo  302\n/musica  /#musica  302\n/tienda  /tienda.html  301\n")
 print("OK")

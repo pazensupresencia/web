@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /regalo-familia-g7k2/
 
 Sitemap: https://pazensupresencia.com/sitemap.xml
